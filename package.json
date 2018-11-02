@@ -21,6 +21,9 @@
   },
   "homepage": "https://github.com/sarahwithanhwilson/habit-tracker#readme",
   "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.1.0",
     "pg": "^7.6.0",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.41.0"

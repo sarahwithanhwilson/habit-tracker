@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import axios from 'axios';
 import HabitList from './HabitList.jsx';
 
 class App extends React.Component {
@@ -7,20 +8,27 @@ class App extends React.Component {
     super();
     this.state = {
       user: {id: 1, name: 'Anonymous', username: 'user', password: 'pass'},
-      habits: [ {id: 1, userId: 1, name: 'workout'}, {id: 2, userId: 1, name: 'read'}, {id: 3, userId: 1, name: 'call mom'} ],
-      // habits: [],
+      // habits: [ {id: 1, userId: 1, name: 'workout'}, {id: 2, userId: 1, name: 'read'}, {id: 3, userId: 1, name: 'call mom'} ],
+      habits: [],
       showEdit: false,
     }
   }
 
-  onComponentDidMount() {
+  componentDidMount() {
+    this.getHabits();
+  }
+
+  getHabits() {
     const { user } = this.state;
-    //axios request for habits with this user id
-      // then setState for habits
+    axios.get(`/api/habits?userId=${user.id}`)
+    .then((data) => {
+      this.setState({habits: data.data});
+    })
+    .catch((err) => console.log(err));
   }
 
   editHabits() {
-    // if clicked, show habits. 
+    // if clicked, show edit
   }
 
   render() {
