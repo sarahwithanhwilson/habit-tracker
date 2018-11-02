@@ -20,7 +20,11 @@
     "url": "https://github.com/sarahwithanhwilson/habit-tracker/issues"
   },
   "homepage": "https://github.com/sarahwithanhwilson/habit-tracker#readme",
-  "dependencies": {},
+  "dependencies": {
+    "pg": "^7.6.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.41.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
