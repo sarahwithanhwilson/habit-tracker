@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import HabitList from './HabitList.jsx';
+import css from './style.css';
 
 class App extends React.Component {
   constructor() {
@@ -27,17 +28,23 @@ class App extends React.Component {
     .catch((err) => console.log(err));
   }
 
-  editHabits() {
-    // if clicked, show edit
+  handleAddNewHabit() {
+    // axios.post('/api/habit', {})
   }
 
   render() {
     const { user, habits } = this.state;
     return (
       <div>
-        <h1>Habit Tracker</h1>
-        <button onClick={this.editHabits.bind(this)}>Edit Habits</button>
-        <HabitList habits={habits} user={user} />
+        <div className="grid-top">
+          <h1 id="logo">Habit Tracker</h1>
+        </div>
+        <div className="grid-body">
+          <HabitList habits={habits} user={user} />
+          <br />
+          <br />
+          <button onClick={this.handleAddNewHabit.bind(this)} className="new-habit">Add New Habit</button>
+        </div>
       </div>
     );
   }

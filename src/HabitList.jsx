@@ -13,13 +13,21 @@ class HabitList extends React.Component {
       )
       : (
       <div>
-        <ul>
+        <table>
+          <tr>
+            <th>Habit</th>
+            <th>Completed</th>
+            <th>Streak</th>
+            <th> </th>
+          </tr>
           {habits.map((habit) => {
             return (
-              <li><Habit habit={habit} user={user} /></li>
-            )
+              <Habit habit={habit} user={user} />
+            );
           })}
-        </ul>
+        </table>
+
+
       </div>
     );
   }

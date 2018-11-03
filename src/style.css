@@ -1,0 +1,86 @@
+/* 
+dark blue: 0890CC
+light blue: 89BCFF
+yellow: FFDD76
+brown: 999884
+dark gray: 363738
+*/
+
+:root {
+  --dark-blue: #0890CC;
+  --light-blue: #89BCFF;
+  --yellow: #FFDD76;
+  --brown: #999884;
+  --dark-gray: #363738;
+}
+body{
+  background-image: linear-gradient(to right, var(--light-blue), white);
+  font-family: monospace;
+  color: var(--dark-gray);
+}
+
+p{
+  font-size: 2em;
+}
+
+.container{
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 10% auto;
+  grid-template-columns: 100%;
+  grid-gap: 0;
+  grid-template-areas:
+    "header"
+    "main";
+}
+
+.grid-top{
+  grid-area: header;
+  text-align: center;
+}
+
+.grid-body{
+  grid-area: main;
+  text-align: center;
+  align-content: center;
+}
+
+#logo{
+  font-weight: bolder
+}
+
+button{
+  background-color: var(--yellow);
+  border: none;
+  border-radius: 2px;
+  font-size: 1em;
+  color: var(--dark-gray);
+  font-family: inherit;
+  text-shadow: #363738;
+}
+
+.new-habit{
+  font-family: monospace;
+  padding: 5px;
+  justify-self: center;
+}
+
+table{
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  font-size: inherit;
+}
+
+th{
+  background-color: rgba(256, 256, 256, 0.3);
+  padding: 6px;
+  font-size: 1em;
+}
+
+td{
+  text-align: center;
+  padding: 6px;
+  font-size: 1em;
+}
